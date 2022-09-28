@@ -1,0 +1,13 @@
+dsdp for Debian
+---------------
+
+The matlab related files (documentation, examples) are not installed.
+
+Furthermore the precompiled documentations files were removed. They are
+available online under the following urls:
+
+http://www-unix.mcs.anl.gov/DSDP/DSDP5-API-UserGuide.pdf
+http://www-unix.mcs.anl.gov/DSDP/DSDP5-Exe-UserGuide.pdf
+http://www-unix.mcs.anl.gov/DSDP/DSDP5-P1289-0905.pdf
+
+ -- Soeren Sonnenburg <sonne@debian.org>  Wed, 01 Aug 2007 22:58:57 +0200

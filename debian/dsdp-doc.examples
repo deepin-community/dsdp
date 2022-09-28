@@ -1,0 +1,8 @@
+examples/Contents
+examples/color.c
+examples/dsdp.c
+examples/maxcut.c
+examples/readsdpa.c
+examples/stable.c
+examples/theta.c
+

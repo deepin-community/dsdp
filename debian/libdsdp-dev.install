@@ -1,0 +1,3 @@
+lib/libdsdp.a lib/libdsdp.so usr/lib
+include/*.h src/sdp/*.h usr/include/dsdp
+

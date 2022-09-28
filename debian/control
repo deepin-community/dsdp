@@ -1,0 +1,94 @@
+Source: dsdp
+Section: science
+Priority: extra
+Maintainer: Soeren Sonnenburg <sonne@debian.org>
+Build-Depends: cdbs, debhelper (>= 5), gfortran, libblas-dev, liblapack-dev,
+ doxygen, doxygen-latex
+Standards-Version: 3.9.2
+Homepage: http://www-unix.mcs.anl.gov/DSDP/
+Vcs-Svn: https://bollin.googlecode.com/svn/dsdp/trunk/
+Vcs-Browser: http://bollin.googlecode.com/svn/dsdp/trunk/
+
+Package: dsdp
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Software for Semidefinite Programming
+ The DSDP software is a free open source implementation of an interior-point
+ method for semidefinite programming. It provides primal and dual solutions,
+ exploits low-rank structure and sparsity in the data, and has relatively
+ low memory requirements for an interior-point method. It allows feasible
+ and infeasible starting points and provides approximate certificates of
+ infeasibility when no feasible solution exists. The dual-scaling
+ algorithm implemented in this package has a convergence proof and
+ worst-case polynomial complexity under mild assumptions on the
+ data. Furthermore, the solver offers scalable parallel performance for
+ large problems and a well documented interface. Some of the most popular
+ applications of semidefinite programming and linear matrix inequalities
+ (LMI) are model control, truss topology design, and semidefinite
+ relaxations of combinatorial and global optimization problems.
+ .
+ This package contains the binaries.
+
+Package: dsdp-doc
+Architecture: all
+Depends: ${misc:Depends}
+Recommends: dsdp
+Section: doc
+Description: Software for Semidefinite Programming
+ The DSDP software is a free open source implementation of an interior-point
+ method for semidefinite programming. It provides primal and dual solutions,
+ exploits low-rank structure and sparsity in the data, and has relatively
+ low memory requirements for an interior-point method. It allows feasible
+ and infeasible starting points and provides approximate certificates of
+ infeasibility when no feasible solution exists. The dual-scaling
+ algorithm implemented in this package has a convergence proof and
+ worst-case polynomial complexity under mild assumptions on the
+ data. Furthermore, the solver offers scalable parallel performance for
+ large problems and a well documented interface. Some of the most popular
+ applications of semidefinite programming and linear matrix inequalities
+ (LMI) are model control, truss topology design, and semidefinite
+ relaxations of combinatorial and global optimization problems.
+ .
+ This package contains the documentation and examples.
+
+Package: libdsdp-dev
+Section: libdevel
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libdsdp-5.8gf (= ${binary:Version})
+Description: Software for Semidefinite Programming
+ The DSDP software is a free open source implementation of an interior-point
+ method for semidefinite programming. It provides primal and dual solutions,
+ exploits low-rank structure and sparsity in the data, and has relatively
+ low memory requirements for an interior-point method. It allows feasible
+ and infeasible starting points and provides approximate certificates of
+ infeasibility when no feasible solution exists. The dual-scaling
+ algorithm implemented in this package has a convergence proof and
+ worst-case polynomial complexity under mild assumptions on the
+ data. Furthermore, the solver offers scalable parallel performance for
+ large problems and a well documented interface. Some of the most popular
+ applications of semidefinite programming and linear matrix inequalities
+ (LMI) are model control, truss topology design, and semidefinite
+ relaxations of combinatorial and global optimization problems.
+ .
+ This package contains the header files for developers.
+
+Package: libdsdp-5.8gf
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Software for Semidefinite Programming
+ The DSDP software is a free open source implementation of an interior-point
+ method for semidefinite programming. It provides primal and dual solutions,
+ exploits low-rank structure and sparsity in the data, and has relatively
+ low memory requirements for an interior-point method. It allows feasible
+ and infeasible starting points and provides approximate certificates of
+ infeasibility when no feasible solution exists. The dual-scaling
+ algorithm implemented in this package has a convergence proof and
+ worst-case polynomial complexity under mild assumptions on the
+ data. Furthermore, the solver offers scalable parallel performance for
+ large problems and a well documented interface. Some of the most popular
+ applications of semidefinite programming and linear matrix inequalities
+ (LMI) are model control, truss topology design, and semidefinite
+ relaxations of combinatorial and global optimization problems.
+ .
+ This package contains the library files.

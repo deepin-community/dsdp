@@ -1,0 +1,142 @@
+.\"                                      Hey, EMACS: -*- nroff -*-
+.\" First parameter, NAME, should be all caps
+.\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
+.\" other parameters are allowed: see man(7), man(1)
+.TH DSDP 1 "August  1, 2007"
+.\" Please adjust this date whenever revising the manpage.
+.\"
+.\" Some roff macros, for reference:
+.\" .nh        disable hyphenation
+.\" .hy        enable hyphenation
+.\" .ad l      left justify
+.\" .ad b      justify to both left and right margins
+.\" .nf        disable filling
+.\" .fi        enable filling
+.\" .br        insert line break
+.\" .sp <n>    insert n+1 empty lines
+.\" for manpage-specific macros, see man(7)
+.SH NAME
+dsdp5 \- semidefinite program solver
+.SH SYNOPSIS
+.B dsdp5
+.RI [ options ] " filename"
+.br
+.B maxcut
+.RI [ options ] " filename"
+.br
+.B theta
+.RI " filename"
+.br
+.SH DESCRIPTION
+This manual page documents briefly the
+.B dsdp5,
+.B theta
+and
+.B maxcut
+commands.
+.PP
+.\" TeX users may be more comfortable with the \fB<whatever>\fP and
+.\" \fI<whatever>\fP escape sequences to invode bold face and italics, 
+.\" respectively.
+\fBdsdp5\fP -- interface to solve general semi-definite programs
+.br
+\fBmaxcut\fP -- solves a SDP relaxation of the maximum cut problem
+.br
+\fBtheta\fP -- solves the Lovasz thetha problem
+.SH OPTIONS
+A summary of options is included below.
+For a complete description, see 
+.B /usr/share/doc/dsdp-doc.
+.TP
+.B \-help
+Show summary of options.
+.TP
+.B \-v, \-\-version
+Show version of program.
+.TP
+.B \-print
+print information at each k iteration (default 10)
+.TP
+.B \-save
+filename of solution file in SDPA format
+.TP
+.B \-fout
+filename to print standard monitor to a file
+.TP
+.B \-y0
+filename for initial solution file
+.TP
+.B \-benchmark
+filename to file containing names of SDPA files
+.TP
+.B \-directory
+path to directory containing benchmark SDPA files
+.TP
+.B \-suffix
+suffix to add to each benchmark problem name
+.TP
+.B \-dloginfo
+print more information for higher numbers (default 0)
+.TP
+.B \-dlogsummary
+print timing information (default 1 \- enabled)
+.TP
+.B \-gaptol
+gap tolerance parameter, stop when relative duality gap less than this gap (default 1e-6)
+.TP
+.B \-r0 
+if nonnegative, initialize S by adding this multiple of the identity matrix (default \-1)
+.TP
+.B \-penalty 
+penalize dual infeasibility (default 1e10)
+.TP
+.B \-boundy
+bound for variables y (default 1e7)
+.TP
+.B \-maxit 
+set maximum iterates (default 200)
+.TP
+.B \-zbar 
+Upper bound for dual solution (default 1e10)
+.TP
+.B \-mu0
+if positive, set initial barrier parameter (default \-1)
+.TP
+.B \-rho
+Potential parameter as multiple of dimension (default 3)
+.TP
+.B \-drho 
+Use dynamic rho strategy (default 1)
+.TP
+.B \-pnormtol
+stop only if pnorm less than (default 1e30)
+.TP
+.B \-reuse
+Reuse the Schur Matrix this many times (default 4)
+.TP
+.B -dobjmin
+apply a known lower bound for the objective at solution as a constraint. 
+.TP
+.B -bigM
+if positive, modify algorithm to make dual infeasibility positive with
+a large associated cost (default 0)
+.TP
+.B \-dloginfo 
+print more information for higher numbers  (default 0)
+.TP
+.B \-params
+filename to read selected options from a file
+.br
+.SH SEE ALSO
+.BR glpsol (1),
+.TP
+The programs are documented fully in the accompanying .pdf and html documentation
+which can be found in
+.B /usr/share/doc/dsdp-doc
+if the dsdp-doc package is installed.
+.SH AUTHOR
+dsdp was written by Steven J. Benson <benson@mcs.anl.gov> and
+Yinyu Ye <yinyu-ye@stanford.edu>
+.PP
+This manual page was written by Soeren Sonnenburg <sonne@debian.org>,
+for the Debian project (but may be used by others).

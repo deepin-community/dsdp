@@ -1,0 +1,33 @@
+#!/usr/bin/make -f
+include /usr/share/cdbs/1/rules/debhelper.mk
+
+DEB_SHLIBDEPS_INCLUDE := /usr/lib/atlas
+ver    := $(DEB_UPSTREAM_VERSION)
+soname := libdsdp-$(ver)gf.so
+
+common-build-arch:: debian/build-arch-stamp
+debian/build-arch-stamp:
+	$(MAKE) DSDPROOT=`pwd` OPTFLAGS="-fPIC -O3" dsdpapi LAPACKBLAS="-llapack \
+		-lblas -lm"
+	cd lib && ar x libdsdp.a && \
+		$(CC) -shared -Wl,--no-add-needed,-soname=$(soname) -o $(soname) *.o \
+		-llapack -lblas -lm && ln -s $(soname) libdsdp.so && rm *.o
+	$(MAKE) DSDPROOT=`pwd` -C examples clean
+	$(MAKE) DSDPROOT=`pwd` OPTFLAGS="-O3" DSDPLIB="-L$(CURDIR)/lib -ldsdp -lm" \
+		example LAPACKBLAS=""
+	touch $@
+
+clean::
+	$(MAKE) clean
+	$(RM) debian/build-arch-stamp debian/build-indep-stamp
+	$(RM) docs/dox/docwarnings bin/results-dsdp*
+	$(RM) -r docs/dox/html 
+
+common-build-indep:: debian/build-indep-stamp
+debian/build-indep-stamp:
+	cd docs/dox && doxygen
+	touch $@
+
+get-orig-source:
+	uscan --rename --upstream-version 0 || true
+	@echo successfully retrieved upstream tarball
