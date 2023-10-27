@@ -2,11 +2,13 @@
 include /usr/share/cdbs/1/rules/debhelper.mk
 
 DEB_SHLIBDEPS_INCLUDE := /usr/lib/atlas
+DEB_INSTALL_DOCS_dsdp-doc := -X_formulas -X_form0
 ver    := $(DEB_UPSTREAM_VERSION)
 soname := libdsdp-$(ver)gf.so
 
 common-build-arch:: debian/build-arch-stamp
 debian/build-arch-stamp:
+	mkdir -vp $(CURDIR)/lib
 	$(MAKE) DSDPROOT=`pwd` OPTFLAGS="-fPIC -O3" dsdpapi LAPACKBLAS="-llapack \
 		-lblas -lm"
 	cd lib && ar x libdsdp.a && \
@@ -22,6 +24,7 @@ clean::
 	$(RM) debian/build-arch-stamp debian/build-indep-stamp
 	$(RM) docs/dox/docwarnings bin/results-dsdp*
 	$(RM) -r docs/dox/html 
+	$(RM) -r lib
 
 common-build-indep:: debian/build-indep-stamp
 debian/build-indep-stamp:
