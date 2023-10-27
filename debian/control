@@ -1,13 +1,13 @@
 Source: dsdp
 Section: science
-Priority: extra
-Maintainer: Soeren Sonnenburg <sonne@debian.org>
-Build-Depends: cdbs, debhelper (>= 5), gfortran, libblas-dev, liblapack-dev,
+Priority: optional
+Maintainer: Debian QA Group <packages@qa.debian.org>
+Build-Depends: cdbs, debhelper (>= 7), gfortran, libblas-dev, liblapack-dev,
  doxygen, doxygen-latex
 Standards-Version: 3.9.2
 Homepage: http://www-unix.mcs.anl.gov/DSDP/
-Vcs-Svn: https://bollin.googlecode.com/svn/dsdp/trunk/
-Vcs-Browser: http://bollin.googlecode.com/svn/dsdp/trunk/
+Vcs-Git: https://salsa.debian.org/debian/dsdp.git
+Vcs-Browser: https://salsa.debian.org/debian/dsdp
 
 Package: dsdp
 Architecture: any
@@ -31,6 +31,7 @@ Description: Software for Semidefinite Programming
 
 Package: dsdp-doc
 Architecture: all
+Multi-Arch: foreign
 Depends: ${misc:Depends}
 Recommends: dsdp
 Section: doc
